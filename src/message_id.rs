@@ -99,6 +99,7 @@ impl MessageId {
             .finalize();
 
         let digest_read_len = std::cmp::min(MESSAGE_ID_SIZE - 1, digest.len());
+        debug_assert!(digest_read_len < MESSAGE_ID_SIZE - 1);
         let mut message_id = [0u8; MESSAGE_ID_SIZE];
         let (message_id_hash_alg, message_id_digest) = message_id.split_at_mut(1);
         // Set HashAlg
