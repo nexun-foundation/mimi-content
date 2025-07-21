@@ -12,7 +12,7 @@ impl GfmMimiRenderer<'_> {
                 .table(true)
                 .tasklist(true)
                 .strikethrough(true)
-                .shortcodes(true) // TODO: To decide with Rohan
+                .shortcodes(false)
                 .build(),
             parse: comrak::ParseOptions::builder()
                 .relaxed_tasklist_matching(true)
